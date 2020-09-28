@@ -16,7 +16,7 @@ class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     # We don't want the user to create a new task, but leave the content empty
     content = db.Column(db.String(200), nullable=False) 
-    date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    date_created = db.Column(db.DateTime, default=datetime.now())
 
     def __repr__(self):
         return '<Task %r>' % self.id
