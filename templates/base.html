@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <!-- Our CSS -->
+         <link rel="stylesheet" href="../static/main.css">
+        {% block head %} {% endblock %}
+    </head>
+
+    
+    <body>
+        <div class="container">
+            <!-- Get all flash messages -->
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            <!-- If there is a message -->
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{category}} alert-dismissible fade show">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <strong>Warning! </strong>{{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+            {% endwith %}
+                
+            <div class="jumbotron heading-main">
+                <h1>Welcome To Task Master</h1>
+            </div>
+
+
+            {% block body %}
+
+            {% endblock %}
+        </div>
+    </body>
+</html>

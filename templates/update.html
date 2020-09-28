@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+    <title>To Do List</title> 
+{% endblock %}
+
+
+
+{% block body %}
+
+<div class="container">
+
+    <form action="/update/{{task.id}}" method="POST" class="form-inline mt-4">
+        <label for="content" class="mb-2 mr-sm-2">Enter your task here:</label>
+        <input type="text" name="content" id="content" class="form-control mr-2 col-lg-8" value="{{task.content}}">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+
+</div>
+
+{% endblock %}
