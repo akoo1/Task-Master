@@ -17,6 +17,10 @@
     
     <body>
         <div class="container">
+            <div class="jumbotron heading-main">
+                <h1>Welcome To Task Master</h1>
+            </div>
+            
             <!-- Get all flash messages -->
             {% with messages = get_flashed_messages(with_categories=true) %}
             <!-- If there is a message -->
@@ -29,10 +33,6 @@
                 {% endfor %}
             {% endif %}
             {% endwith %}
-                
-            <div class="jumbotron heading-main">
-                <h1>Welcome To Task Master</h1>
-            </div>
 
 
             {% block body %}
